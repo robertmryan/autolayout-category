@@ -6,7 +6,7 @@
 
 This is a Objective-C category that provides a series of convenience methods for creating auto layout constraints. This is particularly useful for setting centering constraints, which aren't easily done in visual format language. It also provides a few methods for quickly finding constraints in case you want to change or replace them as controls are moved and/or resized.
 
-See the [class reference](robertmryan.github.io/autolayout-category) for more information.
+See the [class reference](http://robertmryan.github.io/autolayout-category) for more information.
 
 --
 
