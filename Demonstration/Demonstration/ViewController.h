@@ -1,6 +1,6 @@
 //
 //  ViewController.h
-//  Auto Layout Convenience Methods
+//  Demonstration
 //
 //  Created by Robert Ryan on 11/16/13.
 //  Copyright (c) 2013 Robert Ryan. All rights reserved.

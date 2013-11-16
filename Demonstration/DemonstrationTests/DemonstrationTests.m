@@ -1,6 +1,6 @@
 //
-//  Auto_Layout_Convenience_MethodsTests.m
-//  Auto Layout Convenience MethodsTests
+//  DemonstrationTests.m
+//  DemonstrationTests
 //
 //  Created by Robert Ryan on 11/16/13.
 //  Copyright (c) 2013 Robert Ryan. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface Auto_Layout_Convenience_MethodsTests : XCTestCase
+@interface DemonstrationTests : XCTestCase
 
 @end
 
-@implementation Auto_Layout_Convenience_MethodsTests
+@implementation DemonstrationTests
 
 - (void)setUp
 {

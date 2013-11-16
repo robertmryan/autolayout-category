@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Auto Layout Convenience Methods.xcodeproj">
+      location = "self:Demonstration.xcodeproj">
    </FileRef>
 </Workspace>
