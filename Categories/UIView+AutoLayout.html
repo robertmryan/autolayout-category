@@ -1,0 +1,1792 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>UIView(AutoLayout) Category Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Auto Layout Category </a></h1>
+				<a id="developerHome" href="../index.html">Robert M. Ryan</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">UIView(AutoLayout) Category Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addBottomConstraint:">&nbsp;&nbsp;&nbsp;&nbsp;- addBottomConstraint:</option>
+	
+	<option value="//api/name/addBottomConstraint:fromBottomLayoutGuideForViewController:">&nbsp;&nbsp;&nbsp;&nbsp;- addBottomConstraint:fromBottomLayoutGuideForViewController:</option>
+	
+	<option value="//api/name/addCenterConstraints">&nbsp;&nbsp;&nbsp;&nbsp;- addCenterConstraints</option>
+	
+	<option value="//api/name/addCenterXConstraint">&nbsp;&nbsp;&nbsp;&nbsp;- addCenterXConstraint</option>
+	
+	<option value="//api/name/addCenterXConstraintWithMultiplier:constant:">&nbsp;&nbsp;&nbsp;&nbsp;- addCenterXConstraintWithMultiplier:constant:</option>
+	
+	<option value="//api/name/addCenterYConstraint">&nbsp;&nbsp;&nbsp;&nbsp;- addCenterYConstraint</option>
+	
+	<option value="//api/name/addCenterYConstraintWithMultiplier:constant:">&nbsp;&nbsp;&nbsp;&nbsp;- addCenterYConstraintWithMultiplier:constant:</option>
+	
+	<option value="//api/name/addHeightConstraint:">&nbsp;&nbsp;&nbsp;&nbsp;- addHeightConstraint:</option>
+	
+	<option value="//api/name/addLeadingAndTopConstraints:">&nbsp;&nbsp;&nbsp;&nbsp;- addLeadingAndTopConstraints:</option>
+	
+	<option value="//api/name/addLeadingAndTopConstraints:fromTopLayoutGuideForViewController:">&nbsp;&nbsp;&nbsp;&nbsp;- addLeadingAndTopConstraints:fromTopLayoutGuideForViewController:</option>
+	
+	<option value="//api/name/addLeadingConstraint:">&nbsp;&nbsp;&nbsp;&nbsp;- addLeadingConstraint:</option>
+	
+	<option value="//api/name/addSizeConstraints:">&nbsp;&nbsp;&nbsp;&nbsp;- addSizeConstraints:</option>
+	
+	<option value="//api/name/addTopConstraint:">&nbsp;&nbsp;&nbsp;&nbsp;- addTopConstraint:</option>
+	
+	<option value="//api/name/addTopConstraint:fromTopLayoutGuideForViewController:">&nbsp;&nbsp;&nbsp;&nbsp;- addTopConstraint:fromTopLayoutGuideForViewController:</option>
+	
+	<option value="//api/name/addTrailingAndBottomConstraints:">&nbsp;&nbsp;&nbsp;&nbsp;- addTrailingAndBottomConstraints:</option>
+	
+	<option value="//api/name/addTrailingAndBottomConstraints:fromBottomLayoutGuideForViewController:">&nbsp;&nbsp;&nbsp;&nbsp;- addTrailingAndBottomConstraints:fromBottomLayoutGuideForViewController:</option>
+	
+	<option value="//api/name/addTrailingConstraint:">&nbsp;&nbsp;&nbsp;&nbsp;- addTrailingConstraint:</option>
+	
+	<option value="//api/name/addWidthConstraint:">&nbsp;&nbsp;&nbsp;&nbsp;- addWidthConstraint:</option>
+	
+	<option value="//api/name/constraintsForAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;- constraintsForAttribute:</option>
+	
+	<option value="//api/name/constraintsWithinSuperviewForAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;- constraintsWithinSuperviewForAttribute:</option>
+	
+	<option value="//api/name/removeConstraintsForAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;- removeConstraintsForAttribute:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Add center alignment constraints">Add center alignment constraints</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Add position constraints">Add position constraints</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Add size constraints">Add size constraints</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Find constraints">Find constraints</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Remove constraints">Remove constraints</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addBottomConstraint:">addBottomConstraint:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addBottomConstraint:fromBottomLayoutGuideForViewController:">addBottomConstraint:fromBottomLayoutGuideForViewController:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addCenterConstraints">addCenterConstraints</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addCenterXConstraint">addCenterXConstraint</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addCenterXConstraintWithMultiplier:constant:">addCenterXConstraintWithMultiplier:constant:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addCenterYConstraint">addCenterYConstraint</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addCenterYConstraintWithMultiplier:constant:">addCenterYConstraintWithMultiplier:constant:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addHeightConstraint:">addHeightConstraint:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addLeadingAndTopConstraints:">addLeadingAndTopConstraints:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addLeadingAndTopConstraints:fromTopLayoutGuideForViewController:">addLeadingAndTopConstraints:fromTopLayoutGuideForViewController:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addLeadingConstraint:">addLeadingConstraint:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addSizeConstraints:">addSizeConstraints:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addTopConstraint:">addTopConstraint:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addTopConstraint:fromTopLayoutGuideForViewController:">addTopConstraint:fromTopLayoutGuideForViewController:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addTrailingAndBottomConstraints:">addTrailingAndBottomConstraints:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addTrailingAndBottomConstraints:fromBottomLayoutGuideForViewController:">addTrailingAndBottomConstraints:fromBottomLayoutGuideForViewController:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addTrailingConstraint:">addTrailingConstraint:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addWidthConstraint:">addWidthConstraint:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/constraintsForAttribute:">constraintsForAttribute:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/constraintsWithinSuperviewForAttribute:">constraintsWithinSuperviewForAttribute:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeConstraintsForAttribute:">removeConstraintsForAttribute:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="UIView(AutoLayout) Category Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">UIView(AutoLayout) Category Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">UIView+AutoLayout.h<br />UIView+AutoLayout.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Category of auto layout convenience methods.</p>
+
+<h2>Usage</h2>
+
+<ol>
+<li><p>Add <code>UIView+AutoLayout.h</code> and <code>UIView+AutoLayout.m</code> to your project.</p></li>
+<li><p>Import header file:</p>
+
+<pre><code> #import "UIView+AutoLayout.h"
+</code></pre></li>
+<li><p>You can now use the appropriate <code>UIView</code> methods this category provides to easily add the necessary constraints, e.g.</p>
+
+<pre><code> @implementation ViewController
+
+ - (void)viewDidLoad
+ {
+     [super viewDidLoad];
+
+     // create three random views
+
+     UIView *blueView = [[UIView alloc] init];
+     blueView.translatesAutoresizingMaskIntoConstraints = NO;
+     blueView.backgroundColor = [UIColor blueColor];
+     [self.view addSubview:blueView];
+
+     UIView *redView = [[UIView alloc] init];
+     redView.translatesAutoresizingMaskIntoConstraints = NO;
+     redView.backgroundColor = [UIColor redColor];
+     [self.view addSubview:redView];
+
+     UIView *greenView = [[UIView alloc] init];
+     greenView.translatesAutoresizingMaskIntoConstraints = NO;
+     greenView.backgroundColor = [UIColor greenColor];
+     [self.view addSubview:greenView];
+
+     // set blue view size and put it in upper left corner
+
+     [blueView addSizeConstraints:CGSizeMake(44.0, 44.0)];
+     [blueView addLeadingAndTopConstraints:CGPointMake(10.0, 10.0) fromTopLayoutGuideForViewController:self];
+
+     // set red view size and put it in lower right corner
+
+     [redView addSizeConstraints:CGSizeMake(44.0, 44.0)];
+     [redView addTrailingAndBottomConstraints:CGPointMake(10.0, 10.0) fromBottomLayoutGuideForViewController:self];
+
+     // set green view size and put it in the middle
+
+     [greenView addSizeConstraints:CGSizeMake(44.0, 44.0)];
+     [greenView addCenterConstraints];
+ }
+
+ @end
+</code></pre></li>
+</ol>
+
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Add center alignment constraints" name="task_Add center alignment constraints"></a>
+						<h3 class="subsubtitle task-title">Add center alignment constraints</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addCenterXConstraintWithMultiplier:constant:">&ndash;&nbsp;addCenterXConstraintWithMultiplier:constant:</a></code>
+		<span class="tooltip"><p>Add constraint to center view horizontally with respect to its superview</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addCenterXConstraint">&ndash;&nbsp;addCenterXConstraint</a></code>
+		<span class="tooltip"><p>Add constraint to center view horizontally with respect to its superview.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addCenterYConstraintWithMultiplier:constant:">&ndash;&nbsp;addCenterYConstraintWithMultiplier:constant:</a></code>
+		<span class="tooltip"><p>Add constraint to center view vertically with respect to its superview</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addCenterYConstraint">&ndash;&nbsp;addCenterYConstraint</a></code>
+		<span class="tooltip"><p>Add constraint to center view vertically with respect to its superview.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addCenterConstraints">&ndash;&nbsp;addCenterConstraints</a></code>
+		<span class="tooltip"><p>Add constraints to center view both horizontally and vertically with respect to its superview.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Add position constraints" name="task_Add position constraints"></a>
+						<h3 class="subsubtitle task-title">Add position constraints</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addLeadingConstraint:">&ndash;&nbsp;addLeadingConstraint:</a></code>
+		<span class="tooltip"><p>Add leading (generally left) constraint for view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addTopConstraint:">&ndash;&nbsp;addTopConstraint:</a></code>
+		<span class="tooltip"><p>Add top constraint for view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addTopConstraint:fromTopLayoutGuideForViewController:">&ndash;&nbsp;addTopConstraint:fromTopLayoutGuideForViewController:</a></code>
+		<span class="tooltip"><p>Add top constraint for view from the view controller&rsquo;s top layout guide.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addTrailingConstraint:">&ndash;&nbsp;addTrailingConstraint:</a></code>
+		<span class="tooltip"><p>Add trailing (generally right) constraint for view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addBottomConstraint:">&ndash;&nbsp;addBottomConstraint:</a></code>
+		<span class="tooltip"><p>Add constraint from the bottom of the view to the bottom of its superview&rsquo;s bottom.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addBottomConstraint:fromBottomLayoutGuideForViewController:">&ndash;&nbsp;addBottomConstraint:fromBottomLayoutGuideForViewController:</a></code>
+		<span class="tooltip"><p>Add constraint from the bottom of the view to the view controller&rsquo;s bottom layout guide.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addLeadingAndTopConstraints:">&ndash;&nbsp;addLeadingAndTopConstraints:</a></code>
+		<span class="tooltip"><p>Add leading (generally left) and top constraints for view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addLeadingAndTopConstraints:fromTopLayoutGuideForViewController:">&ndash;&nbsp;addLeadingAndTopConstraints:fromTopLayoutGuideForViewController:</a></code>
+		<span class="tooltip"><p>Add leading (generally left) and top constraints for view from the view controller&rsquo;s top layout guide.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addTrailingAndBottomConstraints:">&ndash;&nbsp;addTrailingAndBottomConstraints:</a></code>
+		<span class="tooltip"><p>Add trailing (generally right) and bottom constraints for view.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addTrailingAndBottomConstraints:fromBottomLayoutGuideForViewController:">&ndash;&nbsp;addTrailingAndBottomConstraints:fromBottomLayoutGuideForViewController:</a></code>
+		<span class="tooltip"><p>Add trailing (generally right) and bottom constraints for view from the view controller&rsquo;s bottom layout guide.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Add size constraints" name="task_Add size constraints"></a>
+						<h3 class="subsubtitle task-title">Add size constraints</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addHeightConstraint:">&ndash;&nbsp;addHeightConstraint:</a></code>
+		<span class="tooltip"><p>Set height of view using constraints.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addWidthConstraint:">&ndash;&nbsp;addWidthConstraint:</a></code>
+		<span class="tooltip"><p>Set width of view using constraints.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addSizeConstraints:">&ndash;&nbsp;addSizeConstraints:</a></code>
+		<span class="tooltip"><p>Set size (both height and width) of view using constraints.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Find constraints" name="task_Find constraints"></a>
+						<h3 class="subsubtitle task-title">Find constraints</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/constraintsForAttribute:">&ndash;&nbsp;constraintsForAttribute:</a></code>
+		<span class="tooltip"><p>Find constraints within the view&rsquo;s list of constraints for the given attribute.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/constraintsWithinSuperviewForAttribute:">&ndash;&nbsp;constraintsWithinSuperviewForAttribute:</a></code>
+		<span class="tooltip"><p>Find constraints within the superview&rsquo;s list of constraints for this view and for the given attribute.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Remove constraints" name="task_Remove constraints"></a>
+						<h3 class="subsubtitle task-title">Remove constraints</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeConstraintsForAttribute:">&ndash;&nbsp;removeConstraintsForAttribute:</a></code>
+		<span class="tooltip"><p>Remove constraints for particular attribute of this view.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addBottomConstraint:" title="addBottomConstraint:"></a>
+	<h3 class="subsubtitle method-title">addBottomConstraint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add constraint from the bottom of the view to the bottom of its superview&rsquo;s bottom.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addBottomConstraint:(CGFloat)<em>bottom</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bottom</em></dt>
+			<dd><p>Bottom constraint in points. Use positive <code>bottom</code> value to offset this view inside its superview, negative values to offset this view beyond its superview.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>To add a constraint from the iOS7+ bottom layout guide, see <a href="#//api/name/addBottomConstraint:fromBottomLayoutGuideForViewController:"><code>addBottomConstraint:fromBottomLayoutGuideForViewController:</code></a>.</p><div class="note"><p><strong>Note:</strong> Use positive <code>bottom</code> value to offset this view inside its superview, negative values to offset this view beyond its superview.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addBottomConstraint:fromBottomLayoutGuideForViewController:">- addBottomConstraint:fromBottomLayoutGuideForViewController:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addBottomConstraint:fromBottomLayoutGuideForViewController:" title="addBottomConstraint:fromBottomLayoutGuideForViewController:"></a>
+	<h3 class="subsubtitle method-title">addBottomConstraint:fromBottomLayoutGuideForViewController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add constraint from the bottom of the view to the view controller&rsquo;s bottom layout guide.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addBottomConstraint:(CGFloat)<em>bottom</em> fromBottomLayoutGuideForViewController:(UIViewController *)<em>controller</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bottom</em></dt>
+			<dd><p>Bottom constraint in points. Use positive <code>bottom</code> value to offset this view inside its superview, negative values to offset this view beyond its superview.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>controller</em></dt>
+			<dd><p>View controller with bottom layout guide.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If you do not want to add a constraint from the iOS7+ bottom layout guide, see <a href="#//api/name/addBottomConstraint:"><code>addBottomConstraint:</code></a>.</p><div class="note"><p><strong>Note:</strong> If not using iOS7+, this will just call <code>addBottomContraint:</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addBottomConstraint:">- addBottomConstraint:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/addTopConstraint:fromTopLayoutGuideForViewController:">- addTopConstraint:fromTopLayoutGuideForViewController:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addCenterConstraints" title="addCenterConstraints"></a>
+	<h3 class="subsubtitle method-title">addCenterConstraints</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add constraints to center view both horizontally and vertically with respect to its superview.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addCenterConstraints</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addCenterXConstraint">- addCenterXConstraint</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/addCenterYConstraint">- addCenterYConstraint</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addCenterXConstraint" title="addCenterXConstraint"></a>
+	<h3 class="subsubtitle method-title">addCenterXConstraint</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add constraint to center view horizontally with respect to its superview.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addCenterXConstraint</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If you want to control the <code>multiplier</code> and <code>constant</code> values for the constraint, see <a href="#//api/name/addCenterXConstraintWithMultiplier:constant:"><code>addCenterXConstraintWithMultiplier:constant:</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addCenterXConstraintWithMultiplier:constant:">- addCenterXConstraintWithMultiplier:constant:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addCenterXConstraintWithMultiplier:constant:" title="addCenterXConstraintWithMultiplier:constant:"></a>
+	<h3 class="subsubtitle method-title">addCenterXConstraintWithMultiplier:constant:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add constraint to center view horizontally with respect to its superview</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addCenterXConstraintWithMultiplier:(CGFloat)<em>multiplier</em> constant:(CGFloat)<em>constant</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>multiplier</em></dt>
+			<dd><p>Multiplier to apply when aligning horizontally.
+A value of 1.0 will center it.
+A value less than 1.0 will shift it left.
+A value greater than 1.0 will shift it right.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>constant</em></dt>
+			<dd><p>Constant to apply when aligning horizontally, measured in points.
+A positive value will shift it right.
+A negative value will shift it left.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> If you simply want to center the view horizontally, you can use <code>addCenterXConstraint:</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addCenterXConstraint">- addCenterXConstraint</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addCenterYConstraint" title="addCenterYConstraint"></a>
+	<h3 class="subsubtitle method-title">addCenterYConstraint</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add constraint to center view vertically with respect to its superview.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addCenterYConstraint</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If you want to control the <code>multiplier</code> and <code>constant</code> values for the constraint, see <a href="#//api/name/addCenterYConstraintWithMultiplier:constant:"><code>addCenterYConstraintWithMultiplier:constant:</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addCenterYConstraintWithMultiplier:constant:">- addCenterYConstraintWithMultiplier:constant:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addCenterYConstraintWithMultiplier:constant:" title="addCenterYConstraintWithMultiplier:constant:"></a>
+	<h3 class="subsubtitle method-title">addCenterYConstraintWithMultiplier:constant:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add constraint to center view vertically with respect to its superview</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addCenterYConstraintWithMultiplier:(CGFloat)<em>multiplier</em> constant:(CGFloat)<em>constant</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>multiplier</em></dt>
+			<dd><p>Multiplier to apply when aligning vertically.
+A value of 1.0 will center it.
+A value less than 1.0 will shift it up.
+A value greater than 1.0 will shift it down.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>constant</em></dt>
+			<dd><p>Constant to apply when aligning horizontally, measured in points.
+A positive value will shift it down.
+A negative value will shift it up.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If you simply want to center the view vertically, you can use <a href="#//api/name/addCenterYConstraint"><code>addCenterYConstraint</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addCenterYConstraint">- addCenterYConstraint</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addHeightConstraint:" title="addHeightConstraint:"></a>
+	<h3 class="subsubtitle method-title">addHeightConstraint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set height of view using constraints.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addHeightConstraint:(CGFloat)<em>height</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>height</em></dt>
+			<dd><p>Height of view in points.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addWidthConstraint:">- addWidthConstraint:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/addSizeConstraints:">- addSizeConstraints:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addLeadingAndTopConstraints:" title="addLeadingAndTopConstraints:"></a>
+	<h3 class="subsubtitle method-title">addLeadingAndTopConstraints:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add leading (generally left) and top constraints for view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addLeadingAndTopConstraints:(CGPoint)<em>origin</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>origin</em></dt>
+			<dd><p>CGPoint of origin of view.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addLeadingConstraint:">- addLeadingConstraint:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/addTopConstraint:">- addTopConstraint:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addLeadingAndTopConstraints:fromTopLayoutGuideForViewController:" title="addLeadingAndTopConstraints:fromTopLayoutGuideForViewController:"></a>
+	<h3 class="subsubtitle method-title">addLeadingAndTopConstraints:fromTopLayoutGuideForViewController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add leading (generally left) and top constraints for view from the view controller&rsquo;s top layout guide.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addLeadingAndTopConstraints:(CGPoint)<em>origin</em> fromTopLayoutGuideForViewController:(UIViewController *)<em>controller</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>origin</em></dt>
+			<dd><p>CGPoint of origin of view.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>controller</em></dt>
+			<dd><p>View controller with top layout guide.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addLeadingConstraint:">- addLeadingConstraint:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/addTopConstraint:fromTopLayoutGuideForViewController:">- addTopConstraint:fromTopLayoutGuideForViewController:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addLeadingConstraint:" title="addLeadingConstraint:"></a>
+	<h3 class="subsubtitle method-title">addLeadingConstraint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add leading (generally left) constraint for view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addLeadingConstraint:(CGFloat)<em>leading</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>leading</em></dt>
+			<dd><p>Leading constraint in points.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addSizeConstraints:" title="addSizeConstraints:"></a>
+	<h3 class="subsubtitle method-title">addSizeConstraints:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set size (both height and width) of view using constraints.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addSizeConstraints:(CGSize)<em>size</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>size</em></dt>
+			<dd><p>The <code>CGSize</code> of view in points.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addHeightConstraint:">- addHeightConstraint:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/addWidthConstraint:">- addWidthConstraint:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addTopConstraint:" title="addTopConstraint:"></a>
+	<h3 class="subsubtitle method-title">addTopConstraint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add top constraint for view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addTopConstraint:(CGFloat)<em>top</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>top</em></dt>
+			<dd><p>Top constraint in points.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If you want to offset this from the view controller&rsquo;s top layout guide in iOS 7+, see <a href="#//api/name/addTopConstraint:fromTopLayoutGuideForViewController:"><code>addTopConstraint:fromTopLayoutGuideForViewController:</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addTopConstraint:fromTopLayoutGuideForViewController:">- addTopConstraint:fromTopLayoutGuideForViewController:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addTopConstraint:fromTopLayoutGuideForViewController:" title="addTopConstraint:fromTopLayoutGuideForViewController:"></a>
+	<h3 class="subsubtitle method-title">addTopConstraint:fromTopLayoutGuideForViewController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add top constraint for view from the view controller&rsquo;s top layout guide.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addTopConstraint:(CGFloat)<em>top</em> fromTopLayoutGuideForViewController:(UIViewController *)<em>controller</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>top</em></dt>
+			<dd><p>Top constraint in points.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>controller</em></dt>
+			<dd><p>View controller with top layout guide.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If you do not want to offset this from the view controller&rsquo;s top layout guide in iOS 7, see <a href="#//api/name/addTopConstraint:"><code>addTopConstraint:</code></a>.</p><div class="note"><p><strong>Note:</strong> If not using iOS7+, this will just call <code>addTopContraint:</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addTopConstraint:">- addTopConstraint:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/addBottomConstraint:fromBottomLayoutGuideForViewController:">- addBottomConstraint:fromBottomLayoutGuideForViewController:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addTrailingAndBottomConstraints:" title="addTrailingAndBottomConstraints:"></a>
+	<h3 class="subsubtitle method-title">addTrailingAndBottomConstraints:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add trailing (generally right) and bottom constraints for view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addTrailingAndBottomConstraints:(CGPoint)<em>point</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>point</em></dt>
+			<dd><p>CGPoint of lower right corner of view (with respect to lower right corner of its superview).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addTrailingConstraint:">- addTrailingConstraint:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/addBottomConstraint:">- addBottomConstraint:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addTrailingAndBottomConstraints:fromBottomLayoutGuideForViewController:" title="addTrailingAndBottomConstraints:fromBottomLayoutGuideForViewController:"></a>
+	<h3 class="subsubtitle method-title">addTrailingAndBottomConstraints:fromBottomLayoutGuideForViewController:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add trailing (generally right) and bottom constraints for view from the view controller&rsquo;s bottom layout guide.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addTrailingAndBottomConstraints:(CGPoint)<em>point</em> fromBottomLayoutGuideForViewController:(UIViewController *)<em>controller</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>point</em></dt>
+			<dd><p>CGPoint of lower right corner of view (with respect to lower right corner of its superview).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>controller</em></dt>
+			<dd><p>View controller with bottom layout guide.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addTrailingConstraint:">- addTrailingConstraint:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/addBottomConstraint:fromBottomLayoutGuideForViewController:">- addBottomConstraint:fromBottomLayoutGuideForViewController:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addTrailingConstraint:" title="addTrailingConstraint:"></a>
+	<h3 class="subsubtitle method-title">addTrailingConstraint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add trailing (generally right) constraint for view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addTrailingConstraint:(CGFloat)<em>trailing</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>trailing</em></dt>
+			<dd><p>Trailing constraint in points.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addWidthConstraint:" title="addWidthConstraint:"></a>
+	<h3 class="subsubtitle method-title">addWidthConstraint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set width of view using constraints.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addWidthConstraint:(CGFloat)<em>width</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>width</em></dt>
+			<dd><p>Width of view in points.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/addHeightConstraint:">- addHeightConstraint:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/addSizeConstraints:">- addSizeConstraints:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/constraintsForAttribute:" title="constraintsForAttribute:"></a>
+	<h3 class="subsubtitle method-title">constraintsForAttribute:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Find constraints within the view&rsquo;s list of constraints for the given attribute.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)constraintsForAttribute:(NSLayoutAttribute)<em>attribute</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attribute</em></dt>
+			<dd><p>The <code>NSLayoutAttribute</code> being searched for.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns an array of <code>NSLayoutAttribute</code> objects (often only one). If no constraints, this returns <code>nil</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the constraint being searched for is not related to any other item (notably size and width), then this method can be used to find it. If you are looking for an attribute associated with the <code>superview</code>, use <a href="#//api/name/constraintsWithinSuperviewForAttribute:"><code>constraintsWithinSuperviewForAttribute:</code></a>, instead.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/constraintsWithinSuperviewForAttribute:" title="constraintsWithinSuperviewForAttribute:"></a>
+	<h3 class="subsubtitle method-title">constraintsWithinSuperviewForAttribute:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Find constraints within the superview&rsquo;s list of constraints for this view and for the given attribute.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)constraintsWithinSuperviewForAttribute:(NSLayoutAttribute)<em>attribute</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attribute</em></dt>
+			<dd><p>The <code>NSLayoutAttribute</code> being searched for.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns an array of <code>NSLayoutAttribute</code> objects (often only one). If no constraints, this returns <code>nil</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the constraint being searched for is not related to any other item (notably size and width), then you should use <a href="#//api/name/constraintsForAttribute:"><code>constraintsForAttribute:</code></a>. This method searches the <code>superview</code>&rsquo;s constraints for one for this with with the desired attribute, which is generally useful for any constraints other than size and width constraints.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeConstraintsForAttribute:" title="removeConstraintsForAttribute:"></a>
+	<h3 class="subsubtitle method-title">removeConstraintsForAttribute:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Remove constraints for particular attribute of this view.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)removeConstraintsForAttribute:(NSLayoutAttribute)<em>attribute</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attribute</em></dt>
+			<dd><p>The <code>NSLayoutAttribute</code> to be found and removed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns <code>YES</code> if constraint(s) found and removed. Returns <code>NO</code> if not.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the constraint with a width or size attribute, it will search the view&rsquo;s list of constraints. If it&rsquo;s any other type of attribute, it will search the superview&rsquo;s list of constraints for it.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+AutoLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Robert M. Ryan. All rights reserved. (Last updated: 2013-11-16)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
