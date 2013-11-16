@@ -21,7 +21,7 @@
 		83D1E09C1837EC5500F7EC88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D1E07E1837EC5500F7EC88 /* UIKit.framework */; };
 		83D1E0A41837EC5500F7EC88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83D1E0A21837EC5500F7EC88 /* InfoPlist.strings */; };
 		83D1E0A61837EC5500F7EC88 /* DemonstrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D1E0A51837EC5500F7EC88 /* DemonstrationTests.m */; };
-		83D1E0B81838194F00F7EC88 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D1E0B71838194F00F7EC88 /* UIView+AutoLayout.m */; };
+		83D1E0BE18381AF600F7EC88 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D1E0BD18381AF600F7EC88 /* UIView+AutoLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,10 +54,10 @@
 		83D1E0A11837EC5500F7EC88 /* DemonstrationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DemonstrationTests-Info.plist"; sourceTree = "<group>"; };
 		83D1E0A31837EC5500F7EC88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83D1E0A51837EC5500F7EC88 /* DemonstrationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemonstrationTests.m; sourceTree = "<group>"; };
-		83D1E0B61838194F00F7EC88 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
-		83D1E0B71838194F00F7EC88 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
-		83D1E0B91838195E00F7EC88 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		83D1E0BA1838195E00F7EC88 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		83D1E0BC18381AF600F7EC88 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		83D1E0BD18381AF600F7EC88 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		83D1E0BF18381B0000F7EC88 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		83D1E0C018381B0000F7EC88 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +87,9 @@
 		83D1E06E1837EC5500F7EC88 = {
 			isa = PBXGroup;
 			children = (
-				83D1E0BA1838195E00F7EC88 /* README.md */,
-				83D1E0B91838195E00F7EC88 /* LICENSE */,
-				83D1E0B51838194F00F7EC88 /* Auto Layout Category */,
+				83D1E0C018381B0000F7EC88 /* README.md */,
+				83D1E0BF18381B0000F7EC88 /* LICENSE */,
+				83D1E0BB18381AF600F7EC88 /* Auto Layout Category */,
 				83D1E0801837EC5500F7EC88 /* Demonstration */,
 				83D1E09F1837EC5500F7EC88 /* DemonstrationTests */,
 				83D1E0791837EC5500F7EC88 /* Frameworks */,
@@ -160,13 +160,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		83D1E0B51838194F00F7EC88 /* Auto Layout Category */ = {
+		83D1E0BB18381AF600F7EC88 /* Auto Layout Category */ = {
 			isa = PBXGroup;
 			children = (
-				83D1E0B61838194F00F7EC88 /* UIView+AutoLayout.h */,
-				83D1E0B71838194F00F7EC88 /* UIView+AutoLayout.m */,
+				83D1E0BC18381AF600F7EC88 /* UIView+AutoLayout.h */,
+				83D1E0BD18381AF600F7EC88 /* UIView+AutoLayout.m */,
 			);
-			path = "Auto Layout Category";
+			name = "Auto Layout Category";
+			path = "../Auto Layout Category";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83D1E0911837EC5500F7EC88 /* ViewController.m in Sources */,
-				83D1E0B81838194F00F7EC88 /* UIView+AutoLayout.m in Sources */,
+				83D1E0BE18381AF600F7EC88 /* UIView+AutoLayout.m in Sources */,
 				83D1E08B1837EC5500F7EC88 /* AppDelegate.m in Sources */,
 				83D1E0871837EC5500F7EC88 /* main.m in Sources */,
 			);
