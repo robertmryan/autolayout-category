@@ -183,6 +183,17 @@
     [self addWidthConstraint:size.width];
 }
 
+- (void)addRatioSizeConstraint:(CGSize)ratio
+{
+	[self addConstraint:[NSLayoutConstraint constraintWithItem:self
+													 attribute:NSLayoutAttributeHeight
+													 relatedBy:NSLayoutRelationEqual
+														toItem:self
+													 attribute:NSLayoutAttributeWidth
+													multiplier:(ratio.height / ratio.width)
+													  constant:0.0]];
+}
+
 - (void)setHeightConstraint:(CGFloat)height
 {
 	[self removeConstraintsForAttribute:NSLayoutAttributeHeight];
@@ -199,6 +210,22 @@
 {
 	[self setHeightConstraint:size.height];
 	[self setWidthConstraint:size.width];
+}
+
+#pragma mark - Add relation constraints
+
+- (void)addRelationshipConstraintEqualForAttribute:(NSLayoutAttribute)attribute toItem:(id)relatedItem
+{
+	if (self.superview)
+	{
+		[self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self
+															   attribute:attribute
+															   relatedBy:NSLayoutRelationEqual
+																  toItem:relatedItem
+															   attribute:attribute
+															  multiplier:1.0
+																constant:0.0]];
+	}
 }
 
 #pragma mark - Find constraints
@@ -269,4 +296,22 @@
 
     return success;
 }
+
+- (BOOL)removeConstraintsAffectingAttribute:(NSLayoutAttribute)attribute
+{
+	BOOL success = [self removeConstraintsForAttribute:attribute];
+	
+	if (attribute == NSLayoutAttributeHeight || attribute == NSLayoutAttributeWidth)
+	{
+		NSArray *constraints = [self constraintsWithinSuperviewForAttribute:attribute];
+		if (constraints)
+		{
+			[self.superview removeConstraints:constraints];
+			success = YES;
+		}
+	}
+	
+	return success;
+}
+
 @end

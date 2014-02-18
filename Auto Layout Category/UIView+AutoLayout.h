@@ -278,6 +278,12 @@
 
 - (void)addSizeConstraints:(CGSize)size;
 
+/** Set size (both height and width) to a base ratio, so that the view scales with the same relative size between height and width.
+ *
+ *  @param ratio A `CGSize` with the base height and width you would like to maintain. This could be `{ 16.0, 9.0 }`, `{ 4.0. 3.0 }`, or just the original size of the view or contained image.
+ */
+- (void)addRatioSizeConstraint:(CGSize)ratio;
+
 /** Replace existing height constraints with a new constraint.
  *
  *  @param height Height of view in points.
@@ -307,6 +313,17 @@
  *	@see removeConstraintsForAttribute:
  */
 - (void)setSizeConstraintsToSize:(CGSize)size;
+
+/// ------------------------------
+/// @name Add relation constraints
+/// ------------------------------
+
+/** Set view's specified attribute to be equal to the same attribute on a related view
+ *
+ *  @param attribute   The `NSLayoutAttribute` to make equal.
+ *  @param relatedItem The object to relate to, and pull the attribute value from. Most likely another UIView.
+ */
+- (void)addRelationshipConstraintEqualForAttribute:(NSLayoutAttribute)attribute toItem:(id)relatedItem;
 
 /// ----------------------
 /// @name Find constraints
@@ -348,5 +365,19 @@
  */
 
 - (BOOL) removeConstraintsForAttribute:(NSLayoutAttribute)attribute;
+
+/** Remove all constraints for a particular attribute that might affect this view, including constraints listed in superview.
+ *
+ *	@warning Because this method searches both `self` and `superview` for constraints, you may end up removing relationship based constraints that affect other objects. Use with caution.
+ *
+ *  @param attribute  The `NSLayoutAttribute` to be found and removed.
+ *
+ *  @return           Returns `YES` if constraint(s) found and removed. Returns `NO` if not.
+ *
+ *	@see removeConstraintsForAttribute:
+ *	@see constraintsForAttribute:
+ *	@see constraintsWithinSuperviewForAttribute:
+ */
+- (BOOL)removeConstraintsAffectingAttribute:(NSLayoutAttribute)attribute;
 
 @end
