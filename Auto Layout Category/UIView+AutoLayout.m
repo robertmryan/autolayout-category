@@ -155,32 +155,108 @@
 
 #pragma mark - Set size constraints
 
-- (void)addHeightConstraint:(CGFloat)height
+- (void)addHeightConstraint:(CGFloat)height multiplier:(CGFloat)multiplier
 {
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self
                                                      attribute:NSLayoutAttributeHeight
                                                      relatedBy:NSLayoutRelationEqual
                                                         toItem:nil
                                                      attribute:NSLayoutAttributeNotAnAttribute
-                                                    multiplier:1.0
+                                                    multiplier:multiplier
                                                       constant:height]];
 }
 
-- (void)addWidthConstraint:(CGFloat)width
+- (void)addHeightConstraint:(CGFloat)height
+{
+    [self addHeightConstraint:height multiplier:1.0];
+}
+
+- (void)addWidthConstraint:(CGFloat)width multiplier:(CGFloat)multiplier
 {
     [self addConstraint:[NSLayoutConstraint constraintWithItem:self
                                                      attribute:NSLayoutAttributeWidth
                                                      relatedBy:NSLayoutRelationEqual
                                                         toItem:nil
                                                      attribute:NSLayoutAttributeNotAnAttribute
-                                                    multiplier:1.0
+                                                    multiplier:multiplier
                                                       constant:width]];
+}
+
+- (void)addWidthConstraint:(CGFloat)width
+{
+    [self addWidthConstraint:width multiplier:1.0];
 }
 
 - (void)addSizeConstraints:(CGSize)size
 {
     [self addHeightConstraint:size.height];
     [self addWidthConstraint:size.width];
+}
+
+- (void)addSizeConstraints:(CGSize)size multiplier:(CGFloat)multiplier
+{
+	[self addHeightConstraint:size.height multiplier:multiplier];
+	[self addWidthConstraint:size.width multiplier:multiplier];
+}
+
+- (void)addRatioSizeConstraint:(CGSize)ratio
+{
+	[self addConstraint:[NSLayoutConstraint constraintWithItem:self
+													 attribute:NSLayoutAttributeHeight
+													 relatedBy:NSLayoutRelationEqual
+														toItem:self
+													 attribute:NSLayoutAttributeWidth
+													multiplier:(ratio.height / ratio.width)
+													  constant:0.0]];
+}
+
+- (void)setHeightConstraint:(CGFloat)height multiplier:(CGFloat)multiplier
+{
+	[self removeConstraintsForAttribute:NSLayoutAttributeHeight];
+	[self addHeightConstraint:height multiplier:multiplier];
+}
+
+- (void)setHeightConstraint:(CGFloat)height
+{
+	[self setHeightConstraint:height multiplier:1.0];
+}
+
+- (void)setWidthConstraint:(CGFloat)width multiplier:(CGFloat)multiplier
+{
+	[self removeConstraintsForAttribute:NSLayoutAttributeWidth];
+	[self addWidthConstraint:width multiplier:multiplier];
+}
+
+- (void)setWidthConstraint:(CGFloat)width
+{
+	[self setWidthConstraint:width multiplier:1.0];
+}
+
+- (void)setSizeConstraints:(CGSize)size multiplier:(CGFloat)multiplier
+{
+	[self setHeightConstraint:size.height multiplier:multiplier];
+	[self setWidthConstraint:size.width multiplier:multiplier];
+}
+
+- (void)setSizeConstraints:(CGSize)size
+{
+	[self setSizeConstraints:size multiplier:1.0];
+}
+
+#pragma mark - Add relation constraints
+
+- (void)addRelationshipConstraintEqualForAttribute:(NSLayoutAttribute)attribute toItem:(id)relatedItem
+{
+	if (self.superview)
+	{
+		[self.superview addConstraint:[NSLayoutConstraint constraintWithItem:self
+															   attribute:attribute
+															   relatedBy:NSLayoutRelationEqual
+																  toItem:relatedItem
+															   attribute:attribute
+															  multiplier:1.0
+																constant:0.0]];
+	}
 }
 
 #pragma mark - Find constraints
@@ -251,4 +327,22 @@
 
     return success;
 }
+
+- (BOOL)removeConstraintsAffectingAttribute:(NSLayoutAttribute)attribute
+{
+	BOOL success = [self removeConstraintsForAttribute:attribute];
+	
+	if (attribute == NSLayoutAttributeHeight || attribute == NSLayoutAttributeWidth)
+	{
+		NSArray *constraints = [self constraintsWithinSuperviewForAttribute:attribute];
+		if (constraints)
+		{
+			[self.superview removeConstraints:constraints];
+			success = YES;
+		}
+	}
+	
+	return success;
+}
+
 @end

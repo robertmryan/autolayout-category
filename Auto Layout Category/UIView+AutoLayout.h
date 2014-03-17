@@ -248,36 +248,166 @@
 /// @name Add size constraints
 /// --------------------------
 
+/** Set height of view using constraints, with specified multiplier.
+ *
+ *  @param height     Height of view in points.
+ *  @param multiplier Multiplier to apply to the height.
+ *
+ *	@see addHeightConstraint:
+ *	@see setHeightConstraint:multiplier:
+ *	@see addWidthConstraint:multiplier:
+ *	@see addSizeConstraints:multiplier:
+ */
+- (void)addHeightConstraint:(CGFloat)height multiplier:(CGFloat)multiplier;
+
 /** Set height of view using constraints.
  *
  * @param height Height of view in points.
  *
+ * @see addHeightConstraint:multiplier:
+ * @see setHeightConstraint:
  * @see addWidthConstraint:
  * @see addSizeConstraints:
  */
-
 - (void)addHeightConstraint:(CGFloat)height;
+
+/** Set width of view using constraints, with specified multiplier.
+ *
+ *  @param width      Width of view in points.
+ *  @param multiplier Multiplier to apply to the width.
+ *
+ *	@see addWidthConstraint:
+ *	@see setWidthConstraint:multiplier:
+ *	@see addHeightConstraint:multiplier:
+ *	@see addSizeConstraints:multiplier:
+ */
+- (void)addWidthConstraint:(CGFloat)width multiplier:(CGFloat)multiplier;
 
 /** Set width of view using constraints.
  *
  * @param width Width of view in points.
  *
+ * @see addWidthConstraint:multiplier:
+ * @see setWidthConstraint:
  * @see addHeightConstraint:
  * @see addSizeConstraints:
  */
-
 - (void)addWidthConstraint:(CGFloat)width;
+
+/** Set size (both height and width) of view using constraints, with specified multipler.
+ *
+ *  @param size       The `CGSize` of view in points.
+ *  @param multiplier Multiplier to apply to both height and width.
+ *
+ *	@see addSizeConstraints:
+ *	@see setSizeConstraints:multiplier:
+ *	@see addHeightConstraint:multiplier:
+ *	@see addWidthConstraint:multiplier:
+ */
+- (void)addSizeConstraints:(CGSize)size multiplier:(CGFloat)multiplier;
 
 /** Set size (both height and width) of view using constraints.
  *
  * @param size The `CGSize` of view in points.
  *
+ * @see addSizeConstraints:multiplier:
+ * @see setSizeConstraints:
  * @see addHeightConstraint:
  * @see addWidthConstraint:
  */
-
 - (void)addSizeConstraints:(CGSize)size;
 
+/** Set size (both height and width) to a base ratio, so that the view scales with the same relative size between height and width.
+ *
+ *  @param ratio A `CGSize` with the base height and width you would like to maintain. This could be `{ 16.0, 9.0 }`, `{ 4.0. 3.0 }`, or just the original size of the view or contained image.
+ */
+- (void)addRatioSizeConstraint:(CGSize)ratio;
+
+/** Replace existing height constraints with a new constraint, with specified multiplier.
+ *
+ *  @param height     Height of view in points.
+ *  @param multiplier Multiplier to apply to the height.
+ *
+ *	@see setHeightConstraint:
+ *	@see addHeightConstraint:multiplier:
+ *	@see setWidthConstraint:multiplier:
+ *	@see setSizeConstraints:multiplier:
+ *	@see removeConstraintsForAttribute:
+ */
+- (void)setHeightConstraint:(CGFloat)height multiplier:(CGFloat)multiplier;
+
+/** Replace existing height constraints with a new constraint.
+ *
+ *  @param height Height of view in points.
+ *
+ *	@see setHeightConstraint:multiplier:
+ *	@see addHeightConstraint:
+ *	@see setWidthConstraint:
+ *	@see setSizeConstraints:
+ *	@see removeConstraintsForAttribute:
+ */
+- (void)setHeightConstraint:(CGFloat)height;
+
+/** Replace existing width constraints with a new constraint, with specified multipler.
+ *
+ *  @param width      Width of view in points.
+ *  @param multiplier Multiplier to apply to the width.
+ *
+ *	@see setWidthConstraint:
+ *	@see addWidthConstraint:multiplier:
+ *	@see setHeightConstraint:multiplier:
+ *	@see setSizeConstraints:multiplier:
+ *	@see removeConstraintsForAttribute:
+ */
+- (void)setWidthConstraint:(CGFloat)width multiplier:(CGFloat)multiplier;
+
+/** Replace existing width constraints with a new constraint.
+ *
+ *  @param width Width of view in points.
+ *
+ *	@see setWidthConstraint:multiplier:
+ *	@see addWidthConstraint:
+ *	@see setHeightConstraint:
+ *	@see setSizeConstraints:
+ *	@see removeConstraintsForAttribute:
+ */
+- (void)setWidthConstraint:(CGFloat)width;
+
+/** Replace existing (both height and width) constraints with new constraints, with specified multiplier.
+ *
+ *  @param size       The `CGSize` of view in points.
+ *  @param multiplier Multiplier to apply to both height and width.
+ *
+ *	@see setSizeConstraints:
+ *	@see addSizeConstraint:multiplier:
+ *	@see setHeightConstraint:multiplier:
+ *	@see setWidthConstraint:multiplier:
+ *	@see removeConstraintsForAttribute:
+ */
+- (void)setSizeConstraints:(CGSize)size multiplier:(CGFloat)multiplier;
+
+/** Replace existing (both height and width) constraints with new constraints.
+ *
+ *  @param size The `CGSize` of view in points.
+ *
+ *	@see setSizeConstraints:multiplier:
+ *	@see addSizeConstraint:
+ *	@see setHeightConstraint:
+ *	@see setWidthConstraint:
+ *	@see removeConstraintsForAttribute:
+ */
+- (void)setSizeConstraints:(CGSize)size;
+
+/// ------------------------------
+/// @name Add relation constraints
+/// ------------------------------
+
+/** Set view's specified attribute to be equal to the same attribute on a related view
+ *
+ *  @param attribute   The `NSLayoutAttribute` to make equal.
+ *  @param relatedItem The object to relate to, and pull the attribute value from. Most likely another UIView.
+ */
+- (void)addRelationshipConstraintEqualForAttribute:(NSLayoutAttribute)attribute toItem:(id)relatedItem;
 
 /// ----------------------
 /// @name Find constraints
@@ -319,5 +449,19 @@
  */
 
 - (BOOL) removeConstraintsForAttribute:(NSLayoutAttribute)attribute;
+
+/** Remove all constraints for a particular attribute that might affect this view, including constraints listed in superview.
+ *
+ *	@warning Because this method searches both `self` and `superview` for constraints, you may end up removing relationship based constraints that affect other objects. Use with caution.
+ *
+ *  @param attribute  The `NSLayoutAttribute` to be found and removed.
+ *
+ *  @return           Returns `YES` if constraint(s) found and removed. Returns `NO` if not.
+ *
+ *	@see removeConstraintsForAttribute:
+ *	@see constraintsForAttribute:
+ *	@see constraintsWithinSuperviewForAttribute:
+ */
+- (BOOL)removeConstraintsAffectingAttribute:(NSLayoutAttribute)attribute;
 
 @end
