@@ -248,34 +248,73 @@
 /// @name Add size constraints
 /// --------------------------
 
+/** Set height of view using constraints, with specified multiplier.
+ *
+ *  @param height     Height of view in points.
+ *  @param multiplier Multiplier to apply to the height.
+ *
+ *	@see addHeightConstraint:
+ *	@see setHeightConstraint:multiplier:
+ *	@see addWidthConstraint:multiplier:
+ *	@see addSizeConstraints:multiplier:
+ */
+- (void)addHeightConstraint:(CGFloat)height multiplier:(CGFloat)multiplier;
+
 /** Set height of view using constraints.
  *
  * @param height Height of view in points.
  *
+ * @see addHeightConstraint:multiplier:
+ * @see setHeightConstraint:
  * @see addWidthConstraint:
  * @see addSizeConstraints:
  */
-
 - (void)addHeightConstraint:(CGFloat)height;
+
+/** Set width of view using constraints, with specified multiplier.
+ *
+ *  @param width      Width of view in points.
+ *  @param multiplier Multiplier to apply to the width.
+ *
+ *	@see addWidthConstraint:
+ *	@see setWidthConstraint:multiplier:
+ *	@see addHeightConstraint:multiplier:
+ *	@see addSizeConstraints:multiplier:
+ */
+- (void)addWidthConstraint:(CGFloat)width multiplier:(CGFloat)multiplier;
 
 /** Set width of view using constraints.
  *
  * @param width Width of view in points.
  *
+ * @see addWidthConstraint:multiplier:
+ * @see setWidthConstraint:
  * @see addHeightConstraint:
  * @see addSizeConstraints:
  */
-
 - (void)addWidthConstraint:(CGFloat)width;
+
+/** Set size (both height and width) of view using constraints, with specified multipler.
+ *
+ *  @param size       The `CGSize` of view in points.
+ *  @param multiplier Multiplier to apply to both height and width.
+ *
+ *	@see addSizeConstraints:
+ *	@see setSizeConstraints:multiplier:
+ *	@see addHeightConstraint:multiplier:
+ *	@see addWidthConstraint:multiplier:
+ */
+- (void)addSizeConstraints:(CGSize)size multiplier:(CGFloat)multiplier;
 
 /** Set size (both height and width) of view using constraints.
  *
  * @param size The `CGSize` of view in points.
  *
+ * @see addSizeConstraints:multiplier:
+ * @see setSizeConstraints:
  * @see addHeightConstraint:
  * @see addWidthConstraint:
  */
-
 - (void)addSizeConstraints:(CGSize)size;
 
 /** Set size (both height and width) to a base ratio, so that the view scales with the same relative size between height and width.
@@ -284,35 +323,80 @@
  */
 - (void)addRatioSizeConstraint:(CGSize)ratio;
 
+/** Replace existing height constraints with a new constraint, with specified multiplier.
+ *
+ *  @param height     Height of view in points.
+ *  @param multiplier Multiplier to apply to the height.
+ *
+ *	@see setHeightConstraint:
+ *	@see addHeightConstraint:multiplier:
+ *	@see setWidthConstraint:multiplier:
+ *	@see setSizeConstraints:multiplier:
+ *	@see removeConstraintsForAttribute:
+ */
+- (void)setHeightConstraint:(CGFloat)height multiplier:(CGFloat)multiplier;
+
 /** Replace existing height constraints with a new constraint.
  *
  *  @param height Height of view in points.
  *
+ *	@see setHeightConstraint:multiplier:
  *	@see addHeightConstraint:
+ *	@see setWidthConstraint:
+ *	@see setSizeConstraints:
  *	@see removeConstraintsForAttribute:
- *	@see setSizeConstraintsToSize:
  */
 - (void)setHeightConstraint:(CGFloat)height;
+
+/** Replace existing width constraints with a new constraint, with specified multipler.
+ *
+ *  @param width      Width of view in points.
+ *  @param multiplier Multiplier to apply to the width.
+ *
+ *	@see setWidthConstraint:
+ *	@see addWidthConstraint:multiplier:
+ *	@see setHeightConstraint:multiplier:
+ *	@see setSizeConstraints:multiplier:
+ *	@see removeConstraintsForAttribute:
+ */
+- (void)setWidthConstraint:(CGFloat)width multiplier:(CGFloat)multiplier;
 
 /** Replace existing width constraints with a new constraint.
  *
  *  @param width Width of view in points.
  *
+ *	@see setWidthConstraint:multiplier:
  *	@see addWidthConstraint:
+ *	@see setHeightConstraint:
+ *	@see setSizeConstraints:
  *	@see removeConstraintsForAttribute:
- *	@see setSizeConstraintsToSize:
  */
 - (void)setWidthConstraint:(CGFloat)width;
+
+/** Replace existing (both height and width) constraints with new constraints, with specified multiplier.
+ *
+ *  @param size       The `CGSize` of view in points.
+ *  @param multiplier Multiplier to apply to both height and width.
+ *
+ *	@see setSizeConstraints:
+ *	@see addSizeConstraint:multiplier:
+ *	@see setHeightConstraint:multiplier:
+ *	@see setWidthConstraint:multiplier:
+ *	@see removeConstraintsForAttribute:
+ */
+- (void)setSizeConstraints:(CGSize)size multiplier:(CGFloat)multiplier;
 
 /** Replace existing (both height and width) constraints with new constraints.
  *
  *  @param size The `CGSize` of view in points.
  *
- *	@see addHeightConstraint:
- *	@see addWidthConstraint:
+ *	@see setSizeConstraints:multiplier:
+ *	@see addSizeConstraint:
+ *	@see setHeightConstraint:
+ *	@see setWidthConstraint:
  *	@see removeConstraintsForAttribute:
  */
-- (void)setSizeConstraintsToSize:(CGSize)size;
+- (void)setSizeConstraints:(CGSize)size;
 
 /// ------------------------------
 /// @name Add relation constraints
