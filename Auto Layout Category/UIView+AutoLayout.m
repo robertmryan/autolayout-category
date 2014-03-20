@@ -183,6 +183,32 @@
     [self addWidthConstraint:size.width];
 }
 
+
+#pragma mark - Default Constraints
+- (CGFloat)defaultSpaceConstraintToView:(UIView *)targetView
+{
+	CGFloat result = CGFLOAT_MIN;
+	
+	if (targetView && [targetView isKindOfClass:[UIView class]]) {
+		NSDictionary *viewsDictionary = @{@"view1": self, @"view2": targetView};
+		NSLayoutConstraint *constraint;
+		
+		if (self.superview == targetView) {
+			constraint = [NSLayoutConstraint constraintsWithVisualFormat:@"|-[view1]" options:0 metrics:nil views:viewsDictionary][0];
+		} else if (targetView.superview == self) {
+			constraint = [NSLayoutConstraint constraintsWithVisualFormat:@"|-[view2]" options:0 metrics:nil views:viewsDictionary][0];
+		} else {
+			constraint = [NSLayoutConstraint constraintsWithVisualFormat:@"[view1]-[view2]" options:0 metrics:nil views:viewsDictionary][0];
+		}
+		
+		if (constraint && constraint.constant >= 0.0) {
+			result = constraint.constant;
+		}
+	}
+	
+	return result;
+}
+
 #pragma mark - Find constraints
 
 - (NSArray *)constraintsForAttribute:(NSLayoutAttribute)attribute
