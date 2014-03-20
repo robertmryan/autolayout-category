@@ -278,6 +278,35 @@
 
 - (void)addSizeConstraints:(CGSize)size;
 
+/** Replace existing height constraints with a new constraint.
+ *
+ *  @param height Height of view in points.
+ *
+ *	@see addHeightConstraint:
+ *	@see removeConstraintsForAttribute:
+ *	@see setSizeConstraintsToSize:
+ */
+- (void)setHeightConstraint:(CGFloat)height;
+
+/** Replace existing width constraints with a new constraint.
+ *
+ *  @param width Width of view in points.
+ *
+ *	@see addWidthConstraint:
+ *	@see removeConstraintsForAttribute:
+ *	@see setSizeConstraintsToSize:
+ */
+- (void)setWidthConstraint:(CGFloat)width;
+
+/** Replace existing (both height and width) constraints with new constraints.
+ *
+ *  @param size The `CGSize` of view in points.
+ *
+ *	@see addHeightConstraint:
+ *	@see addWidthConstraint:
+ *	@see removeConstraintsForAttribute:
+ */
+- (void)setSizeConstraintsToSize:(CGSize)size;
 
 /// ----------------------
 /// @name Find constraints

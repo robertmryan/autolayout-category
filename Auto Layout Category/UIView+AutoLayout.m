@@ -183,6 +183,24 @@
     [self addWidthConstraint:size.width];
 }
 
+- (void)setHeightConstraint:(CGFloat)height
+{
+	[self removeConstraintsForAttribute:NSLayoutAttributeHeight];
+	[self addHeightConstraint:height];
+}
+
+- (void)setWidthConstraint:(CGFloat)width
+{
+	[self removeConstraintsForAttribute:NSLayoutAttributeWidth];
+	[self addWidthConstraint:width];
+}
+
+- (void)setSizeConstraintsToSize:(CGSize)size
+{
+	[self setHeightConstraint:size.height];
+	[self setWidthConstraint:size.width];
+}
+
 #pragma mark - Find constraints
 
 - (NSArray *)constraintsForAttribute:(NSLayoutAttribute)attribute
